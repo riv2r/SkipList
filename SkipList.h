@@ -45,6 +45,7 @@ template<typename K,typename V>
 Node<K,V>::~Node()
 {
     delete[] next;
+    next=nullptr;
 }
 
 template<typename K,typename V>
@@ -123,6 +124,7 @@ SkipList<K,V>::~SkipList()
     if(fileWriter.is_open()) fileWriter.close();
     if(fileReader.is_open()) fileReader.close();
     delete head;
+    head=nullptr;
 }
 
 template<typename K,typename V>
