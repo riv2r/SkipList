@@ -293,11 +293,11 @@ template<typename K,typename V>
 void SkipList<K,V>::outDisk()
 {
     std::cout<<"out disk:"<<std::endl;
-    fileReader.open(STORE_PATH);
+    this->fileReader.open(STORE_PATH);
 
     const char* f=":";
     std::string line;
-    while(getline(fileReader,line))
+    while(getline(this->fileReader,line))
     {
         char* tmp=(char*)line.c_str();
         char* part=strtok(tmp,f);
@@ -307,5 +307,5 @@ void SkipList<K,V>::outDisk()
 
         this->insertElement(key,value);
     }
-    fileReader.close();
+    this->fileReader.close();
 }
